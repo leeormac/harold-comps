@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>5800 Harold Way Rent Comp Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: four stacked 16:9 pages, ROM charcoal and stone, brass accent for the subject property */
+:root{
+  --bg:#ece8e0; --page:#faf8f3; --ink:#1f2328; --ink-soft:#555c66; --rule:#d6d0c4;
+  --brand:#1b2a3a; --brand-ink:#f3efe6; --accent:#a8773a; --accent-soft:#e9d9bf;
+  --comp:#6c7b8a; --comp-net:#b6c0ca; --good:#2f6f4e;
+  --display:'EB Garamond', Garamond, 'Times New Roman', serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--display);font-size:17px;line-height:1.4;padding-inline:16px;padding-block:24px}
+.deck{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+.page{background:var(--page);border:1px solid var(--rule);box-shadow:0 10px 30px rgba(31,35,40,.10);padding:40px 48px 36px;position:relative;display:flex;flex-direction:column;gap:22px;min-height:640px;overflow:hidden}
+.topbar{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--brand);padding-bottom:12px}
+.wordmark{display:flex;align-items:baseline;gap:12px}
+.wordmark .rom{font-size:34px;font-weight:700;letter-spacing:.12em;color:var(--brand)}
+.wordmark .sub{font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+.topbar .meta{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-align:right}
+h1{font-size:44px;font-weight:600;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:34px;font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+h3{font-size:21px;font-weight:600;margin:0;line-height:1.2}
+p{margin:0}
+.eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.lede{font-size:20px;color:var(--ink-soft);max-width:62ch}
+.foot{margin-top:auto;display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);border-top:1px solid var(--rule);padding-top:10px;letter-spacing:.04em}
+.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.photos img{width:100%;aspect-ratio:4/3;object-fit:cover;max-width:100%;display:block;background:var(--rule);border:1px solid var(--rule)}
+.photos.two{grid-template-columns:repeat(2,1fr)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fact{border-top:2px solid var(--brand);padding-top:8px}
+.fact .n{font-size:30px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.fact .l{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+table{border-collapse:collapse;width:100%;font-size:16px;font-variant-numeric:tabular-nums}
+th{text-align:left;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;border-bottom:1px solid var(--brand);padding:6px 8px}
+td{padding:7px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.num,th.num{text-align:right}
+tr.subject td{background:var(--accent-soft);font-weight:600}
+.two-col{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;min-width:0}
+.two-col>*{min-width:0}
+.comp{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{display:flex;flex-direction:column;gap:8px;min-width:0}
+.card .pics{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.card .pics img{width:100%;aspect-ratio:4/3;object-fit:cover;max-width:100%;display:block;background:var(--rule);border:1px solid var(--rule)}
+.card .pics.one{grid-template-columns:1fr}
+.card .pics.one img{aspect-ratio:8/3}
+.card .line{font-size:15px;color:var(--ink-soft)}
+.card .price{font-size:17px}
+/* bar chart */
+.chart{display:flex;flex-direction:column;gap:7px}
+.row{display:grid;grid-template-columns:230px 1fr 88px;align-items:center;gap:10px;font-size:15px}
+.row .lab{text-align:right;line-height:1.15}
+.row .lab small{display:block;color:var(--ink-soft);font-size:13px}
+.row .bars{position:relative;height:30px;background:transparent}
+.row .g{position:absolute;left:0;top:0;height:13px;background:var(--comp)}
+.row .nt{position:absolute;left:0;top:16px;height:13px;background:var(--comp-net)}
+.row.subject .g{background:var(--brand)}
+.row.subject .nt{background:var(--accent)}
+.row .val{font-variant-numeric:tabular-nums;text-align:right;line-height:1.15}
+.row .val small{display:block;color:var(--ink-soft);font-size:13px}
+.axis{display:grid;grid-template-columns:230px 1fr 88px;gap:10px;font-size:12px;color:var(--ink-soft)}
+.axis .ticks{display:flex;justify-content:space-between;border-top:1px solid var(--rule);padding-top:3px}
+.legend{display:flex;gap:18px;font-size:13px;color:var(--ink-soft);flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:22px;height:11px}
+.callout{background:var(--brand);color:var(--brand-ink);padding:16px 20px;font-size:17px;line-height:1.35}
+.callout b{color:#e8c98f}
+.recs{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.recs ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px;font-size:16px}
+.recs li b{font-weight:600}
+@media (max-width:760px){
+  .page{padding:24px 18px}
+  .photos,.facts,.two-col,.comp,.recs{grid-template-columns:1fr 1fr}
+  .row,.axis{grid-template-columns:120px 1fr 70px}
+  h1{font-size:32px}h2{font-size:26px}
+}
+@media (max-width:480px){.photos,.facts,.two-col,.comp,.recs{grid-template-columns:1fr}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15181c;--page:#1e2227;--ink:#ece8e0;--ink-soft:#aeb4bc;--rule:#363c44;--brand:#d9c08e;--brand-ink:#15181c;--accent:#d9a85f;--accent-soft:#3a3222;--comp:#8b9aa9;--comp-net:#55606b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15181c;--page:#1e2227;--ink:#ece8e0;--ink-soft:#aeb4bc;--rule:#363c44;--brand:#d9c08e;--brand-ink:#15181c;--accent:#d9a85f;--accent-soft:#3a3222;--comp:#8b9aa9;--comp-net:#55606b;color-scheme:dark}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- PAGE 1: SUBJECT -->
+<section class="page">
+  <div class="topbar">
+    <div class="wordmark"><span class="rom">ROM</span><span class="sub">Residential</span></div>
+    <div class="meta">2BR Rent Comp Review<br>October 12, 2026</div>
+  </div>
+  <p class="eyebrow">Subject property</p>
+  <h1>5800 Harold Way, Hollywood 90028</h1>
+  <p class="lede">56 units, built 2016, four stories over a connected parking garage. Studios, two and three bedroom plans, washer and dryer in every unit, balconies, high ceilings, rooftop deck with grill, on site gym and manager. Eight units are vacant today with two more turning by October 31.</p>
+  <div class="photos">
+    <img src="https://cdngeneral.rentcafe.com/dmslivecafe/3/1659341/Building%20view%201%20night.jpg?width=900&quality=85" alt="5800 Harold Way exterior at night">
+    <img src="https://cdngeneral.rentcafe.com/dmslivecafe/3/1659341/Interior%20Living%20Room%201.jpg?width=900&quality=85" alt="Living room">
+    <img src="https://cdngeneral.rentcafe.com/dmslivecafe/3/1659341/Interior%20-%20Kitchen%201.jpg?width=900&quality=85" alt="Kitchen">
+    <img src="https://cdngeneral.rentcafe.com/dmslivecafe/3/1659341/Exterior%20Spiral%20Staircases%203.jpg?width=900&quality=85" alt="Balconies and spiral stairs">
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="n">14%</div><div class="l">Vacant today (8 of 56)</div></div>
+    <div class="fact"><div class="n">1,176 sf</div><div class="l">2BR / 2BA plan</div></div>
+    <div class="fact"><div class="n">$3,182 to $3,609</div><div class="l">2BR net effective (Zillow)</div></div>
+    <div class="fact"><div class="n">$3,394 to $3,850</div><div class="l">2BR gross base rent</div></div>
+  </div>
+  <table>
+    <tr><th>Unit</th><th>Plan</th><th class="num">Sq ft</th><th class="num">Gross base</th><th>Concession</th><th class="num">Net effective</th><th class="num">$/sf gross</th><th class="num">$/sf net</th></tr>
+    <tr><td>214</td><td>2BR / 2BA</td><td class="num">1,176</td><td class="num">$3,394</td><td>2nd month free, 16 month lease</td><td class="num">$3,182</td><td class="num">$2.89</td><td class="num">$2.71</td></tr>
+    <tr><td>315</td><td>2BR / 2BA</td><td class="num">1,176</td><td class="num">$3,728</td><td>2nd month free, 16 month lease</td><td class="num">$3,495</td><td class="num">$3.17</td><td class="num">$2.97</td></tr>
+    <tr><td>PH 411</td><td>2BR / 2BA, private deck</td><td class="num">1,176</td><td class="num">$3,850</td><td>2nd month free, 16 month lease</td><td class="num">$3,609</td><td class="num">$3.27</td><td class="num">$3.07</td></tr>
+  </table>
+  <p class="line" style="font-size:14px;color:var(--ink-soft)">Zillow shows the 16 month average with the 2nd month free and move in within 10 days. RentCafe shows base rent with no special. Unit 315 does not reconcile between the two feeds: RentCafe lists $3,495 as base, Zillow lists $3,495 as the net average.</p>
+  <div class="foot"><span>ROM Residential, 444 N Larchmont Blvd Ste 200, Los Angeles</span><span>Page 1 of 4</span></div>
+</section>
+
+<!-- PAGE 2: COMP SET -->
+<section class="page">
+  <div class="topbar">
+    <div class="wordmark"><span class="rom">ROM</span><span class="sub">Residential</span></div>
+    <div class="meta">2BR Rent Comp Review<br>October 12, 2026</div>
+  </div>
+  <p class="eyebrow">Comp set</p>
+  <h2>Four new build mid rise buildings within a mile</h2>
+  <p class="lede">All four are podium buildings with full amenity floors and in unit laundry. Towers and renovated stock are excluded. Pricing pulled October 12, 2026.</p>
+  <div class="comp">
+    <div class="card">
+      <div class="pics">
+        <img src="https://photos.zillowstatic.com/fp/74db8b852163f8fcca9bf2c287fb14ba-cc_ft_960.webp" alt="Fusion Hollywood rooftop view">
+        <img src="https://photos.zillowstatic.com/fp/2701651122a85420aef29b389bb5355a-cc_ft_960.webp" alt="Fusion Hollywood living room">
+        <img src="https://photos.zillowstatic.com/fp/888d9dac865474d05a531fd307dbdbb4-cc_ft_960.webp" alt="Fusion Hollywood bedroom">
+        <img src="https://photos.zillowstatic.com/fp/3f4bf4114e847d220c6aea9dfc95a125-cc_ft_960.webp" alt="Fusion Hollywood loft">
+      </div>
+      <h3>Fusion Hollywood, 5750 Hollywood Blvd</h3>
+      <p class="line">Built 2025. Rooftop deck with BBQ and fire pit, fitness center, two screening rooms, yoga room, spa, lounge, pet wash, EV charging. Parking garage.</p>
+      <p class="price">2BR 1,275 sf $3,499 and 2BR 991 sf $4,055. Four weeks free plus $500 look and lease.</p>
+    </div>
+    <div class="card">
+      <div class="pics">
+        <img src="https://photos.zillowstatic.com/fp/d890ad316d75aa31cd5ee9da969f505c-sr_1152_768.jpg" alt="El Centro exterior">
+        <img src="https://photos.zillowstatic.com/fp/ab1ae8a42807e516fa382cae5ccb26d7-sr_1152_768.jpg" alt="El Centro courtyard">
+        <img src="https://photos.zillowstatic.com/fp/acb7db966e4827f915bd9fa96e087a4f-sr_1152_768.jpg" alt="El Centro pool">
+        <img src="https://photos.zillowstatic.com/fp/c5331532f98cbfac87f3a20ed12a7bd8-sr_1152_768.jpg" alt="El Centro interior">
+      </div>
+      <h3>El Centro Apartments, 6200 Hollywood Blvd</h3>
+      <p class="line">Built 2018, 507 units. Pool, hot tub, sauna, fitness center, yoga and spin studio, outdoor TV lounge, pet park, night patrol. Private parking garage.</p>
+      <p class="price">2BR 1,081 sf $3,354 total monthly. Up to two months free through October 31.</p>
+    </div>
+    <div class="card">
+      <div class="pics">
+        <img src="https://image1.apartmentfinder.com/i2/FH_6ZFeP9HPBjURXdnp7cnbNq8BFrIdAFM3IF7PZRj0/110/archer-hollywood-los-angeles-ca-primary-photo.jpg?p=1" alt="Archer Hollywood exterior">
+        <img src="https://image1.apartmentfinder.com/i2/555cHl2Afoo2YOiQSJd8UpyzdjczE15l4jTNIObRa0Q/110/archer-hollywood-los-angeles-ca-pool.jpg?p=1" alt="Archer Hollywood pool">
+      </div>
+      <h3>Archer Hollywood, 1718 N Las Palmas Ave</h3>
+      <p class="line">Built 2021, six stories, 224 units. Pool, clubhouse, manager on site. 13 to 15 month leases.</p>
+      <p class="price">2BR/2BA 907 sf $3,270 and 910 sf $3,590. 2BR/1BA 927 sf $3,440. No concession advertised.</p>
+    </div>
+    <div class="card">
+      <div class="pics">
+        <img src="https://photos.zillowstatic.com/fp/996f8592c12c61461050a28510a6dc40-sr_1152_768.jpg" alt="5420 Sunset exterior">
+        <img src="https://photos.zillowstatic.com/fp/0404485733898db70eec9e78707b6e98-sr_1152_768.jpg" alt="5420 Sunset interior">
+        <img src="https://photos.zillowstatic.com/fp/a91205197dc222e308f0bc038b83b3bd-sr_1152_768.jpg" alt="5420 Sunset amenity">
+        <img src="https://photos.zillowstatic.com/fp/36486974b34ab8ac7ffd21ed15aa4070-sr_1152_768.jpg" alt="5420 Sunset unit">
+      </div>
+      <h3>5420 Sunset, 5420 W Sunset Blvd</h3>
+      <p class="line">Built 2026, in lease up with 88 units listed. Pool, fitness center, clubhouse, business center. 13 month minimum lease.</p>
+      <p class="price">2BR from $4,653 total monthly, plans up to 1,230 sf. Up to eight weeks free.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Sources: Zillow, RentCafe, Apartment Finder listings as of October 12, 2026</span><span>Page 2 of 4</span></div>
+</section>
+
+<!-- PAGE 3: GROSS VS NET -->
+<section class="page">
+  <div class="topbar">
+    <div class="wordmark"><span class="rom">ROM</span><span class="sub">Residential</span></div>
+    <div class="meta">2BR Rent Comp Review<br>October 12, 2026</div>
+  </div>
+  <p class="eyebrow">Where Harold sits</p>
+  <h2>Gross asking versus net effective, two bedroom units</h2>
+  <div class="legend">
+    <span><i style="background:var(--brand)"></i>Harold gross</span>
+    <span><i style="background:var(--accent)"></i>Harold net effective</span>
+    <span><i style="background:var(--comp)"></i>Comp gross</span>
+    <span><i style="background:var(--comp-net)"></i>Comp net effective (concession spread over 12 months)</span>
+  </div>
+  <div class="chart">
+    <div class="row subject"><div class="lab">Harold 214<small>1,176 sf</small></div><div class="bars"><div class="g" style="width:67.9%"></div><div class="nt" style="width:63.6%"></div></div><div class="val">$3,394<small>$3,182 net</small></div></div>
+    <div class="row subject"><div class="lab">Harold 315<small>1,176 sf</small></div><div class="bars"><div class="g" style="width:74.6%"></div><div class="nt" style="width:69.9%"></div></div><div class="val">$3,728<small>$3,495 net</small></div></div>
+    <div class="row subject"><div class="lab">Harold PH 411<small>1,176 sf, private deck</small></div><div class="bars"><div class="g" style="width:77.0%"></div><div class="nt" style="width:72.2%"></div></div><div class="val">$3,850<small>$3,609 net</small></div></div>
+    <div class="row"><div class="lab">Fusion Hollywood<small>1,275 sf</small></div><div class="bars"><div class="g" style="width:70.0%"></div><div class="nt" style="width:63.3%"></div></div><div class="val">$3,499<small>$3,166 net</small></div></div>
+    <div class="row"><div class="lab">Fusion Hollywood<small>991 sf</small></div><div class="bars"><div class="g" style="width:81.1%"></div><div class="nt" style="width:73.5%"></div></div><div class="val">$4,055<small>$3,675 net</small></div></div>
+    <div class="row"><div class="lab">El Centro<small>1,081 sf</small></div><div class="bars"><div class="g" style="width:67.1%"></div><div class="nt" style="width:55.9%"></div></div><div class="val">$3,354<small>$2,795 net</small></div></div>
+    <div class="row"><div class="lab">Archer Hollywood<small>907 sf</small></div><div class="bars"><div class="g" style="width:65.4%"></div><div class="nt" style="width:65.4%"></div></div><div class="val">$3,270<small>$3,270 net</small></div></div>
+    <div class="row"><div class="lab">Archer Hollywood<small>910 sf</small></div><div class="bars"><div class="g" style="width:71.8%"></div><div class="nt" style="width:71.8%"></div></div><div class="val">$3,590<small>$3,590 net</small></div></div>
+    <div class="row"><div class="lab">Archer Hollywood<small>927 sf, 2BR/1BA</small></div><div class="bars"><div class="g" style="width:68.8%"></div><div class="nt" style="width:68.8%"></div></div><div class="val">$3,440<small>$3,440 net</small></div></div>
+    <div class="row"><div class="lab">5420 Sunset<small>lease up, size not listed</small></div><div class="bars"><div class="g" style="width:93.1%"></div><div class="nt" style="width:77.6%"></div></div><div class="val">$4,653<small>$3,878 net</small></div></div>
+  </div>
+  <div class="axis"><div></div><div class="ticks"><span>$0</span><span>$1,000</span><span>$2,000</span><span>$3,000</span><span>$4,000</span><span>$5,000</span></div><div></div></div>
+  <div class="two-col">
+    <table>
+      <tr><th>Building</th><th class="num">Sq ft</th><th class="num">Gross $/sf</th><th class="num">Net $/sf</th></tr>
+      <tr class="subject"><td>Harold 214</td><td class="num">1,176</td><td class="num">$2.89</td><td class="num">$2.71</td></tr>
+      <tr class="subject"><td>Harold 315</td><td class="num">1,176</td><td class="num">$3.17</td><td class="num">$2.97</td></tr>
+      <tr class="subject"><td>Harold PH 411</td><td class="num">1,176</td><td class="num">$3.27</td><td class="num">$3.07</td></tr>
+      <tr><td>Fusion 1,275 sf</td><td class="num">1,275</td><td class="num">$2.74</td><td class="num">$2.48</td></tr>
+      <tr><td>Fusion 991 sf</td><td class="num">991</td><td class="num">$4.09</td><td class="num">$3.71</td></tr>
+      <tr><td>El Centro</td><td class="num">1,081</td><td class="num">$3.10</td><td class="num">$2.59</td></tr>
+      <tr><td>Archer 907 sf</td><td class="num">907</td><td class="num">$3.61</td><td class="num">$3.61</td></tr>
+      <tr><td>Archer 910 sf</td><td class="num">910</td><td class="num">$3.95</td><td class="num">$3.95</td></tr>
+    </table>
+    <div class="callout">
+      <p>Harold's concession is the thinnest in the set: one month on a 16 month term is a 6.25% discount. Fusion gives 9.5% including the $500 credit, El Centro 16.7%, 5420 Sunset 15%, Archer nothing. <b>On net dollars Harold 214 at $3,182 lands $16 above Fusion's 1,275 sf unit with a full amenity floor, and $387 above El Centro.</b> Harold 315 and PH 411 sit above every comp except Fusion's 991 sf unit and the 5420 Sunset lease up. Per square foot Harold is the cheapest gross and fourth cheapest net, which a renter never sees on a listing page.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Harold net effective per Zillow on a 16 month term. Comps on a 12 month term; Fusion includes the $500 credit; El Centro at two months free; 5420 Sunset at eight weeks free</span><span>Page 3 of 4</span></div>
+</section>
+
+<!-- PAGE 4: RECOMMENDATIONS -->
+<section class="page">
+  <div class="topbar">
+    <div class="wordmark"><span class="rom">ROM</span><span class="sub">Residential</span></div>
+    <div class="meta">2BR Rent Comp Review<br>October 12, 2026</div>
+  </div>
+  <p class="eyebrow">Recommendations</p>
+  <h2>Deepen the concession on a standard term, hold the base rent, fix the feeds</h2>
+  <div class="recs">
+    <div>
+      <h3>Pricing</h3>
+      <ol>
+        <li><b>Move the free month to a 12 month term and drop the 10 day move in deadline.</b> Same cost per lease, a deeper monthly number on the listing, and no friction the comps do not impose. Fusion, El Centro and 5420 Sunset all run their concession on a standard term.</li>
+        <li><b>Unit 214: hold $3,394 base, one month free on 12.</b> Net $3,111, $2.65/sf. $55 under Fusion's 1,275 sf unit, $316 over El Centro, with parking and 1,176 sf.</li>
+        <li><b>Unit 315: reconcile the feeds, then $3,495 base, one month free on 12.</b> Net $3,204. Between Fusion's two plans and under all three Archer units.</li>
+        <li><b>PH 411: $3,695 base, one month free on 12.</b> Net $3,387. $288 under Fusion's 991 sf unit and $203 under Archer's 910 sf, with a private deck. This unit has been listed since March; the current $3,850 base is a $155 cut.</li>
+        <li><b>Concessions, not base cuts, everywhere else.</b> Under the RSO the move in rent caps every increase for that tenancy. A free month costs one month. A base cut compounds for as long as the tenant stays.</li>
+        <li><b>Studios hold at $2,095.</b> They are at market against Fusion's 479 sf studio at $2,249 and are 50 sf larger. Pull the $2,300 placeholder units.</li>
+        <li><b>Three bedrooms to $3,795 base.</b> Hollywood 3BR market sits at $3,855 to $3,995 and 1,238 sf is small for the type. Market them to roommates at under $1,300 a bedroom.</li>
+        <li><b>Window: 60 days.</b> Ten units into December leasing costs more than one month free on each.</li>
+      </ol>
+    </div>
+    <div>
+      <h3>Marketing</h3>
+      <ol>
+        <li><b>One pricing basis on every feed.</b> Zillow shows the 16 month net average, RentCafe shows base with no special, Apartments.com shows a 12 month spread on 411 only. Unit 411 reads $3,437, $3,609 and $3,850 across the three today and unit 315 does not reconcile at all. Pick gross plus a stated special, push it to every feed, and retire the per unit MLS "condo for rent" listings.</li>
+        <li><b>Delete the WAIT5 placeholder rows.</b> Twenty nine plan rows on RentCafe make a 56 unit building read as empty and anchor prospects on the highest price.</li>
+        <li><b>Lead with size and quiet.</b> 1,176 sf against 907 to 1,081 at the comps. Reviews score noise 4.5 and parking 5.0. Say both in the first line.</li>
+        <li><b>Push the Zillow photo set everywhere.</b> Zillow carries 57 photos and a 3D tour. RentCafe carries ten with raw phone file names and no tour, and that is the feed that syndicates to the Yardi network.</li>
+        <li><b>Tour hours.</b> Comps show 9 to 6 six or seven days. Harold shows 10 to 4 weekdays and 10 to 2 weekends. Add evening and self guided tours.</li>
+        <li><b>Fold water and trash into rent.</b> Comps show a single total monthly price. RUBS on top of a base rent reads as a $100 surprise.</li>
+        <li><b>Reframe the condo notice.</b> Script the leasing conversation around RSO protection and a future first right to buy before a prospect reads "condo for rent" and assumes displacement.</li>
+        <li><b>Locator and broker fees through December.</b> Half a month on ten units is cheaper than ten more vacant months.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="foot"><span>Prepared for ROM Residential internal use</span><span>Page 4 of 4</span></div>
+</section>
+
+</div>
+</body>
+</html>
